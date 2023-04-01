@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>S1 - Lecture 3 - Example 5</title>
+    <style>
+        body {
+            margin: 30;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #0f0f0f;
+            color: antiquewhite;
+            font-size: large;
+        }
+
+        input {
+            width: 90%;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #overlay {
+            z-index: 1;
+            width: 10%;
+        }
+
+        #loader {
+            border: 5px solid #f3f3f3;
+            /* Light grey */
+            border-top: 5px solid #3d3d3d;
+            /* Grey */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Data Management Extra Assignment</td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                This application is designed for creating parametric design furniture. The geometry has been designed and scripted in Rhino/Grasshopper 
+                and the user can use the following sliders to change the form and shape of the furniture. Hope you enjoy and have fun with it!
+            </td>
+        </tr>
+    </table>
+    
+    <div id="loader"></div>
+    <hr>
+    <div id="container">
+        <div id="overlay">
+            <div>
+                <input type="range" id="Legs_Width_Start_Point" name="Legs_Width_Start_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Width_Start_Point">Legs Width Start Point</label>
+            </div>
+            <div>
+                <input type="range" id="Legs_Width_End_Point" name="Legs_Width_End_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Width_End_Point">Legs Width End Point</label>
+            </div>
+            <div>
+                <input type="range" id="Legs_Length_Start_Point" name="Legs_Length_Start_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Length_Start_Point">Legs Length Start Point</label>
+            </div>
+            <div>
+                <input type="range" id="Legs_Length_End_Point" name="Legs_Length_End_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Length_End_Point">Legs Length End Point</label>
+            </div>
+            <div>
+                <input type="range" id="Legs_Height_Start_Point" name="Legs_Height_Start_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Height_Start_Point">Legs Height Start Point</label>
+            </div>
+            <div>
+                <input type="range" id="Legs_Height_End_Point" name="Legs_Height_End_Point" min="-50" max="50" value="1" step="1">
+                <label for="Legs_Height_End_Point">Legs Height End Point</label>
+            </div>
+            <div>
+                <input type="range" id="U Coun" name="Rotation_Angel" min="0" max="120" value="1" step="1">
+                <label for="Rotation_Angel">Rotation Angel</label>
+            </div>
+            <div>
+                <input type="range" id="uCount" name="uCount" min="0" max="10" value="1" step="1">
+                <label for="uCount">uCount</label>
+            </div>
+            <div>
+                <input type="range" id="vCount" name="vCount" min="0" max="10" value="1" step="1">
+                <label for="vCount">vCount</label>
+            </div>
+            <div>
+                <input type="range" id="Thickness" name="Thickness" min="0" max="10" value="1" step="0.5">
+                <label for="Thickness">Thickness</label>
+            </div>
+            <div>
+                <input type="range" id="Smoothness" name="Smoothness" min="1" max="3" value="1" step="1">
+                <label for="Smoothness">Smoothness</label>
+            </div>
+
+        </div>
+    </div>
+    <script type="importmap">
+			{
+				"imports": {
+				  "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+				  "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+                  "rhino3dm": "https://unpkg.com/rhino3dm@0.15.0-beta/rhino3dm.module.js",
+                  "rhinocompute": "https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js"
+				}
+			  }
+		  </script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
