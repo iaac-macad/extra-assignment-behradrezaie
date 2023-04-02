@@ -80,37 +80,37 @@ rhino3dm().then(async (m) => {
 async function compute() {
   // Create and asign first parameter value
   const param1 = new RhinoCompute.Grasshopper.DataTree("Legs_Width_Start_Point")
-  param2.append([0], [Legs_Width_Start_Point_slider.valueAsNumber])
+  param1.append([0], [Legs_Width_Start_Point_slider.valueAsNumber])
   
   const param2 = new RhinoCompute.Grasshopper.DataTree("Legs_Width_End_Point")
-  param1.append([0], [Legs_Width_End_Point_slider.valueAsNumber])
+  param2.append([0], [Legs_Width_End_Point_slider.valueAsNumber])
 
   const param3 = new RhinoCompute.Grasshopper.DataTree("Legs_Length_Start_Point")
-  param1.append([0], [Legs_Length_Start_Point_slider.valueAsNumber])
+  param3.append([0], [Legs_Length_Start_Point_slider.valueAsNumber])
 
   const param4 = new RhinoCompute.Grasshopper.DataTree("Legs_Length_End_Point")
-  param1.append([0], [Legs_Length_End_Point_slider.valueAsNumber])
+  param4.append([0], [Legs_Length_End_Point_slider.valueAsNumber])
 
   const param5 = new RhinoCompute.Grasshopper.DataTree("Legs_Height_Start_Point")
-  param1.append([0], [Legs_Height_Start_Point_slider.valueAsNumber])
+  param5.append([0], [Legs_Height_Start_Point_slider.valueAsNumber])
   
   const param6 = new RhinoCompute.Grasshopper.DataTree("Legs_Height_End_Point")
-  param1.append([0], [Legs_Height_End_Point_slider.valueAsNumber])
+  param6.append([0], [Legs_Height_End_Point_slider.valueAsNumber])
   
   const param7 = new RhinoCompute.Grasshopper.DataTree("Rotation_Angel")
-  param1.append([0], [Rotation_Angel_slider.valueAsNumber])
+  param7.append([0], [Rotation_Angel_slider.valueAsNumber])
   
   const param8 = new RhinoCompute.Grasshopper.DataTree("uCount")
-  param1.append([0], [uCount_slider.valueAsNumber])
+  param8.append([0], [uCount_slider.valueAsNumber])
 
   const param9 = new RhinoCompute.Grasshopper.DataTree("vCount")
-  param1.append([0], [vCount_slider.valueAsNumber])
+  param9.append([0], [vCount_slider.valueAsNumber])
 
   const param10 = new RhinoCompute.Grasshopper.DataTree("Thickness")
-  param1.append([0], [Thickness_slider.valueAsNumber])
+  param10.append([0], [Thickness_slider.valueAsNumber])
 
   const param11 = new RhinoCompute.Grasshopper.DataTree("Smoothness")
-  param1.append([0], [Smoothness_slider.valueAsNumber])
+  param11.append([0], [Smoothness_slider.valueAsNumber])
 
   // clear values
   const trees = []
