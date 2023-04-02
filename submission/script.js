@@ -32,10 +32,6 @@ const Legs_Height_End_Point_slider = document.getElementById("Legs_Height_End_Po
 Legs_Height_End_Point.addEventListener("mouseup", onSliderChange, false)
 Legs_Height_End_Point.addEventListener("touchend", onSliderChange, false)
 
-const Rotation_Angel_slider = document.getElementById("Rotation_Angel")
-Rotation_Angel.addEventListener("mouseup", onSliderChange, false)
-Rotation_Angel.addEventListener("touchend", onSliderChange, false)
-
 const uCount_slider = document.getElementById("uCount")
 uCount.addEventListener("mouseup", onSliderChange, false)
 uCount.addEventListener("touchend", onSliderChange, false)
@@ -78,7 +74,7 @@ rhino3dm().then(async (m) => {
  * This function is responsible for gathering values and sending them to local compute server
  */
 async function compute() {
-  // Create and asign first parameter value
+  // Create and assign first parameter value
   const param1 = new RhinoCompute.Grasshopper.DataTree("Legs_Width_Start_Point")
   param1.append([0], [Legs_Width_Start_Point_slider.valueAsNumber])
   
@@ -97,20 +93,17 @@ async function compute() {
   const param6 = new RhinoCompute.Grasshopper.DataTree("Legs_Height_End_Point")
   param6.append([0], [Legs_Height_End_Point_slider.valueAsNumber])
   
-  const param7 = new RhinoCompute.Grasshopper.DataTree("Rotation_Angel")
-  param7.append([0], [Rotation_Angel_slider.valueAsNumber])
-  
-  const param8 = new RhinoCompute.Grasshopper.DataTree("uCount")
-  param8.append([0], [uCount_slider.valueAsNumber])
+  const param7 = new RhinoCompute.Grasshopper.DataTree("uCount")
+  param7.append([0], [uCount_slider.valueAsNumber])
 
-  const param9 = new RhinoCompute.Grasshopper.DataTree("vCount")
-  param9.append([0], [vCount_slider.valueAsNumber])
+  const param8 = new RhinoCompute.Grasshopper.DataTree("vCount")
+  param8.append([0], [vCount_slider.valueAsNumber])
 
-  const param10 = new RhinoCompute.Grasshopper.DataTree("Thickness")
-  param10.append([0], [Thickness_slider.valueAsNumber])
+  const param9 = new RhinoCompute.Grasshopper.DataTree("Thickness")
+  param9.append([0], [Thickness_slider.valueAsNumber])
 
-  const param11 = new RhinoCompute.Grasshopper.DataTree("Smoothness")
-  param11.append([0], [Smoothness_slider.valueAsNumber])
+  const param10 = new RhinoCompute.Grasshopper.DataTree("Smoothness")
+  param10.append([0], [Smoothness_slider.valueAsNumber])
 
   // clear values
   const trees = []
@@ -124,7 +117,6 @@ async function compute() {
   trees.push(param8)
   trees.push(param9)
   trees.push(param10)
-  trees.push(param11)
   // Run the definition
   const res = await RhinoCompute.Grasshopper.evaluateDefinition(
     definition,
@@ -231,7 +223,7 @@ function init() {
   controls = new OrbitControls(camera, renderer.domElement)
 
   // add a directional light
-  const directionalLight = new THREE.DirectionalLight(0xffffff)
+  const directionalLight = new THREE.DirectionalLight(0x404040)
   directionalLight.intensity = 2
   scene.add(directionalLight)
 
