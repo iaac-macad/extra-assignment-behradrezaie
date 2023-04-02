@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
     <title>S1 - Lecture 3 - Example 5</title>
     <style>
         body {
@@ -23,7 +24,7 @@
 
         #overlay {
             z-index: 1;
-            width: 10%;
+            width: 100%;
         }
 
         #loader {
@@ -124,20 +125,19 @@
                 <input type="range" id="Smoothness" name="Smoothness" min="1" max="3" value="1" step="1">
                 <label for="Smoothness">Smoothness</label>
             </div>
-
+            <div>
+                <div>Color Index</div>
+                <form>
+                    <select name="selected_options" style="width: 100px">
+                        <option value="value 1">Red</option>
+                        <option value="value 2">Green</option>
+                        <option value="value 3">Yellow</option>
+                    </select>
+                </form>
+            </div>
         </div>
     </div>
-    <br>
-    <div>
-        <div>Color Index</div>
-        <form>
-            <select name="selected_options" style="width: 100px">
-                <option value="value 1">Red</option>
-                <option value="value 2">Green</option>
-                <option value="value 3">Yellow</option>
-            </select>
-        </form>
-    </div>
+    
     <script type="importmap">
 			{
 				"imports": {
