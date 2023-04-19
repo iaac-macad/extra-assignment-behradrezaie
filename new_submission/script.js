@@ -197,18 +197,19 @@ function init() {
   //directionalLight.intensity = 2;
   //scene.add(directionalLight);
 
+  //ambient light
+  //var light = new THREE.AmbientLight(0xffffff, 0.5);
+  //scene.add(light);
+
   const dl = new THREE.DirectionalLight(0xffffff, 1);
   dl.position.set(1, 10, 5);
   scene.add(dl);
+  
+  const upColor =  0xFFFF80;
+  const downColor = 0x4040FF;
+  const light = new THREE.HemisphereLight( upColor, downColor, 3);
+  scene.add( light );
 
-    //ambient light
-    //var light = new THREE.AmbientLight(0xffffff, 0.5);
-    //scene.add(light);
-
-    const upColor =  0xFFFF80;
-    const downColor = 0x4040FF;
-    const light = new THREE.HemisphereLight( upColor, downColor, 3);
-    scene.add( light );
 
   animate()
 }
