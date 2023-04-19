@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>S1 - Lecture 3 - Example 5</title>
+    <style>
+        body {
+            margin: 30;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #0f0f0f;
+            color: antiquewhite;
+            font-size: large;
+        }
+
+        input {
+            width: 90%;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #overlay {
+            z-index: 1;
+            width: 100%;
+        }
+
+        #loader {
+            border: 5px solid #f3f3f3;
+            /* Light grey */
+            border-top: 5px solid #3d3d3d;
+            /* Grey */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>WAVE PAVILION</td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                This application is designed for creating a Wave Pavilion form to design for outdoor spaces with having open space-frame which allows 
+                the natural light comes inside the geometry. With following slides you can change the height, entrance and exit width and also
+                the thickness of panels. 
+            </td>
+        </tr>
+    </table>
+    
+    <div id="loader"></div>
+    <hr>
+    <div id="container">
+        <div id="overlay">
+            <div>
+                <input type="range" id="Entrance_Width" name="Entrance_Width" min="0" max="50" value="1" step="1">
+                <label for="Entrance_Width">Entrance Width</label>
+            </div>
+            
+            <div>
+                <input type="range" id="Exit_Width" name="Exit_Width" min="0" max="50" value="1" step="1">
+                <label for="Exit_Width">Exit Width</label>
+            </div>
+           
+            <div>
+                <input type="range" id="Height" name="Height" min="1" max="10" value="1" step="1">
+                <label for="Height">Height</label>
+            </div>
+          
+            <div>
+                <input type="range" id="Number_of_Panels" name="Number_of_Panels" min="0" max="300" value="1" step="1">
+                <label fo_="_">Number of Panels</label>
+            </div>
+
+            <div>
+                <input type="range" id="Panel_Thickness" name="Panel_Thickness" min="0" max="1" value="1" step="0.1">
+                <label for="Panel_Thickness">Panel Thickness</label>
+            </div>
+        
+            </div>
+
+        </div>
+    </div>
+    
+    <script type="importmap">
+			{
+				"imports": {
+				  "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+				  "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+                  "rhino3dm": "https://unpkg.com/rhino3dm@0.15.0-beta/rhino3dm.module.js",
+                  "rhinocompute": "https://cdn.jsdelivr.net/npm/compute-rhino3d@0.13.0-beta/compute.rhino3d.module.js"
+				}
+			  }
+		  </script>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
